@@ -4,6 +4,7 @@
   "description": "A flexible, easy expandable EaglercraftX 1.8.9 proxy written in TypeScript.",
   "main": "launcher.js",
   "scripts": {
+    "start": "node launcher.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "WorldEditAxe, q13x",
