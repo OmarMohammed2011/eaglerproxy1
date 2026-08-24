@@ -7,7 +7,7 @@ export const config: Config = {
   adapter: {
     name: "EaglerProxy",
     bindHost: "0.0.0.0",
-    bindPort: 8080,
+    bindPort: 10000,
     maxConcurrentClients: 20,
     // set this to false if you are unable to install sharp due to either the use of a platform that does not support native modules
     // or if you are unable to install the required dependencies. this will cause the proxy to use jimp instead of sharp, which may
@@ -25,9 +25,9 @@ export const config: Config = {
     motd: true
       ? "FORWARD" // "FORWARD" regularly polls the server for the MOTD
       : {
-          iconURL: "motd.png", // must be a valid file path
-          l1: "yes",
-          l2: "no",
+          iconURL: "./icon.webp", // must be a valid file path
+          l1: "Ashwood SMP",
+          l2: "Powered by Render",
         }, // providing an object as such will allow you to supply your own MOTD
     ratelimits: {
       lockout: 10,
@@ -46,7 +46,7 @@ export const config: Config = {
       originBlacklist: null,
     },
     server: {
-      host: "muskellunge.aternos.host",
+      host: "AshwoodSMP.aternos.me",
       port: 35644,
     },
     tls: undefined,
