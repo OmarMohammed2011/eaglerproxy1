@@ -1,32 +1,19 @@
-# --- STAGE 1: Build the TypeScript code ---
-FROM node:18-slim AS builder
-
-WORKDIR /app
-
-# Only copy package.json first to isolate dependency mapping
-COPY package.json ./
-
-# Force build by treating warnings as non-breaking and ignoring locks
-RUN npm install --no-audit --legacy-peer-deps
-
-# Copy all repository source files into the container
-COPY . .
-
-# Install TypeScript globally and transpile your src/config.ts and launchers
-RUN npm install -g typescript
-RUN tsc
-
-# --- STAGE 2: Run the production application ---
 FROM node:18-slim
 
 WORKDIR /app
 
-# Copy over package definitions and the newly compiled production files
+# Copy your core configuration metadata first
 COPY package.json ./
-RUN npm install --omit=dev --no-audit --legacy-peer-deps
 
-# Bring over everything that was safely compiled from the builder stage
-COPY --from=builder /app ./
+# Force NPM to pass through environmental library warnings safely
+RUN npm install --no-audit --legacy-peer-deps
+
+# Copy your source code (including src/config.ts) into the workspace
+COPY . .
+
+# Globally install typescript and compile the code block
+RUN npm install -g typescript
+RUN tsc
 
 EXPOSE 10000
 
