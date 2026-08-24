@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "module": "esnext",
-    "esModuleInterop": true,
-    "target": "ESNext",
-    "sourceMap": false,
-    "outDir": "build",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true
-  },
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "skipLibCheck": true,         // 🌟 ADD THIS LINE (Tells TypeScript to ignore strict type variances)
+    "strict": false,               // 🌟 ADD THIS LINE (Relaxes strict checks for old codebases)
+    "outDir": "./dist"
+  }
+}
+
   "include": ["src/**/*.json", "src/**/*"],
   "hooks": ["copy-files"]
 }
