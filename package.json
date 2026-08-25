@@ -9,8 +9,10 @@
 },
   "author": "WorldEditAxe, q13x",
   "license": "MIT",
-  "dependencies": {"typescript": "~4.9.5"}
-  "@thi.ng/leb128": "3.0.5",
+    "dependencies": {
+    "typescript": "~4.9.5",
+    "@thi.ng/leb128": "3..."
+  }
   "@types/node": "18.11.18",
   "@types/semver": "7.3.13",
   "@types/ws": "8.5.4",
