@@ -31,7 +31,7 @@ export default class DiskDB<T extends any> {
     const pth = path.join(this.folder, `${k}.data`);
     try {
       return this.decoder(await fs.readFile(pth));
-    } catch (err) {
+    } catch (err:any) {
       return null;
     }
   }
@@ -40,7 +40,7 @@ export default class DiskDB<T extends any> {
     k = this.nameGenerator(k);
     if (!DiskDB.VALIDATION_REGEX.test(k)) throw new InvalidKeyError("Invalid key, key can only consist of alphanumeric characters and _");
     const pth = path.join(this.folder, `${k}.data`);
-    await fs.writeFile(pth, this.encoder(v));
+    await fs.writeFile(pth, this.encoder(v) as any);
   }
 }
 
