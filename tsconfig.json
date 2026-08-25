@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "CommonJS",
+    "module": "Node16",
     "rootDir": "./src",    // <--- ADD THIS LINE
     "outDir": "./build",   // <--- Ensures code compiles into your build path
     "moduleResolution": "Node16",
