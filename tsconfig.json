@@ -1,13 +1,15 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "skipLibCheck": true,         // 🌟 ADD THIS LINE (Tells TypeScript to ignore strict type variances)
-    "strict": false,               // 🌟 ADD THIS LINE (Relaxes strict checks for old codebases)
-    "outDir": "./dist"
-  }
+    "module": "CommonJS",
+    "rootDir": "./src",    // <--- ADD THIS LINE
+    "outDir": "./build",   // <--- Ensures code compiles into your build path
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"]
 }
+
 
   "include": ["src/**/*.json", "src/**/*"],
   "hooks": ["copy-files"]
