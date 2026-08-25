@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "rootDir": "./src",    // <--- ADD THIS LINE
     "outDir": "./build",   // <--- Ensures code compiles into your build path
-    "moduleResolution": "node",
+    "moduleResolution": "Node16",
     "esModuleInterop": true
   },
   "include": ["src/**/*"]
